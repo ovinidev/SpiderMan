@@ -1,0 +1,63 @@
+.bg-video {
+	height: 100vh;
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+}
+
+.bg-video::after {
+	content: '';
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: linear-gradient(
+		90deg,
+		#0b0c10 37.3%,
+		rgba(11, 12, 16, 0.8) 65.95%,
+		#0c0c10 90.95%
+	);
+}
+
+@keyframes loading {
+	0% {
+		transform: translateY(-25px);
+		stroke-width: 0;
+		fill: transparent;
+		stroke-dasharray: 1 100;
+	}
+	25% {
+		transform: translateY(0);
+		stroke-width: 0.3;
+		fill: transparent;
+		stroke-dasharray: 100 0;
+	}
+	60%,
+	100% {
+		stroke-width: 0;
+		fill: #edf1f7;
+	}
+}
+
+.loading {
+	animation: loading 10s ease 0s alternate;
+}
+
+@keyframes loadingBody {
+	0% {
+		background: #f11a1a;
+	}
+	60% {
+		background: #8e0f0f;
+	}
+	80%,
+	100% {
+		background: #270404;
+	}
+}
+
+.loading-body {
+	animation: loadingBody 5s ease 0s alternate;
+}
